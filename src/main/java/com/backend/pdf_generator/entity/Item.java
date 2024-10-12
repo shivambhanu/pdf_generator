@@ -22,9 +22,9 @@ public class Item {
     @Column(nullable = false)
     private String name;
 
-    @NotNull(message = "Quantity cannot be null")
+    @NotBlank(message = "Quantity cannot be blank")
     @Column(nullable = false)
-    private Integer quantity;
+    private String quantity;
 
     @NotNull(message = "Rate cannot be null")
     @Column(nullable = false)
@@ -35,8 +35,8 @@ public class Item {
     private Double amount;
 
     // freight_id is the foreign key from Item table to Freight Table
-    // TODO: Is this important? Remove later if not.
-    @ManyToOne
-    @JoinColumn(name = "freight_id")
-    private Freight freight;
+    // Is this important? Remove later if not.
+//    @ManyToOne
+//    @JoinColumn(name = "freight_id")
+//    private Freight freight;
 }
