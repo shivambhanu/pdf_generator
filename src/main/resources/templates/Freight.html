@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Freight Data</title>
+</head>
+<body>
+    <h1>Freight</h1>
+    <p><strong>Seller: </strong> <span th:text="${seller}"></span></p>
+    <p><strong>Seller GSTIN:</strong> <span th:text="${sellerGstin}"></span></p>
+    <p><strong>Buyer: </strong> <span th:text="${buyer}"></span></p>
+    <p><strong>Buyer GSTIN: </strong> <span th:text="$${buyerGstin}"></span></p>
+
+    <h2>Items</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Rate</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="item:${items}">
+                <td th:text="${item.name}"></td>
+                <td th:text="${item.quantity}"></td>
+                <td th:text="${item.rate}"></td>
+                <td th:text="${item.amount}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

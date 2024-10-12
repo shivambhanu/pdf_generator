@@ -1,7 +1,7 @@
 # Dynamic PDF Generation using Spring Boot
 
 ## Overview
-This project is a **Spring Boot** application that provides a REST API for generating PDFs dynamically using a Java template engine (**Thymeleaf** ). The API accepts structured input data in JSON format, generates a PDF based on this data, allows for the download of the PDF, and stores the PDF on local storage for future retrieval.
+This project is a **Spring Boot** application that provides a REST API for generating PDFs dynamically using a Java template engine (**Thymeleaf**). The API accepts structured input data in JSON format, generates a PDF based on this data, allows for the download of the PDF, and stores the PDF on local storage for future retrieval.
 
 ## Features
 - REST API to accept input data and generate PDF dynamically.
