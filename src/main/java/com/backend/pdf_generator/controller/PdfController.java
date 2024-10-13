@@ -25,7 +25,7 @@ public class PdfController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<byte[]> createPdf(@RequestBody Freight freightData) {
+    public ResponseEntity<String> createPdf(@RequestBody Freight freightData) {
         try {
             Map<String, Object> dataMap = new HashMap<>();
             dataMap.put("seller", freightData.getSeller());
@@ -40,11 +40,7 @@ public class PdfController {
 
             File pdf = pdfService.createPdf("freight", dataMap, outputFilePath);
 
-            byte[] pdfBytes = Files.readAllBytes(pdf.toPath());
-            HttpHeaders headers = new HttpHeaders();
-            headers.add("Content-Disposition", "attachment; filename=" + pdf.getName());
-
-            return new ResponseEntity<>(pdfBytes, headers, HttpStatus.OK);
+            return new ResponseEntity<>("PDF has been saved to: " + outputFilePath, HttpStatus.OK);
         } catch(Exception e) {
             e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
