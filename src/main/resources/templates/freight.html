@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Freight Data</title>
 </head>
 <body>
@@ -9,7 +9,7 @@
     <p><strong>Seller: </strong> <span th:text="${seller}"></span></p>
     <p><strong>Seller GSTIN:</strong> <span th:text="${sellerGstin}"></span></p>
     <p><strong>Buyer: </strong> <span th:text="${buyer}"></span></p>
-    <p><strong>Buyer GSTIN: </strong> <span th:text="$${buyerGstin}"></span></p>
+    <p><strong>Buyer GSTIN: </strong> <span th:text="${buyerGstin}"></span></p>
 
     <h2>Items</h2>
     <table>
