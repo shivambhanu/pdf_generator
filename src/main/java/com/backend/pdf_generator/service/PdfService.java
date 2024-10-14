@@ -18,7 +18,7 @@ public class PdfService {
         this.templateEngine = templateEngine;
     }
 
-    public File createPdf(String templateName, Map<String, Object> data, String outputFilePath) throws Exception {
+    public File generatePdf(String templateName, Map<String, Object> data, String outputFilePath) throws Exception {
         Context context = new Context();
         context.setVariables(data);
         String htmlContent = templateEngine.process(templateName, context);

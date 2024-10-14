@@ -5,10 +5,7 @@ import com.backend.pdf_generator.service.PdfService;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
 import java.nio.file.Files;
@@ -24,8 +21,8 @@ public class PdfController {
         this.pdfService = pdfService;
     }
 
-    @PostMapping("/create")
-    public ResponseEntity<String> createPdf(@RequestBody Freight freightData) {
+    @PostMapping("/generate")
+    public ResponseEntity<String> generatePdf(@RequestBody Freight freightData) {
         try {
             Map<String, Object> dataMap = new HashMap<>();
             dataMap.put("seller", freightData.getSeller());
@@ -38,7 +35,7 @@ public class PdfController {
 
             String outputFilePath = "freights/" + freightData.getSeller() + "_freight.pdf";
 
-            File pdf = pdfService.createPdf("freight", dataMap, outputFilePath);
+            File pdf = pdfService.generatePdf("freight", dataMap, outputFilePath);
 
             return new ResponseEntity<>("PDF has been saved to: " + outputFilePath, HttpStatus.OK);
         } catch(Exception e) {
