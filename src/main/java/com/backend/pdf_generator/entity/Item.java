@@ -34,9 +34,4 @@ public class Item {
     @Column(nullable = false)
     private Double amount;
 
-    // freight_id is the foreign key from Item table to Freight Table
-    // Is this important? Remove later if not.
-//    @ManyToOne
-//    @JoinColumn(name = "freight_id")
-//    private Freight freight;
 }
