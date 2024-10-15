@@ -12,6 +12,7 @@ This project is a **Spring Boot** application that provides a REST API for gener
 - Supports **Test-Driven Development (TDD)** with proper test cases.
 
 ## API Endpoints
+- **Make sure to create "freights" folder in your root directory for local storage**
 - http://localhost:8080/freight
 - http://localhost:8080/generate
 - http://localhost:8080/download/1
