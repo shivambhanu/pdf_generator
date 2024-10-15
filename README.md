@@ -11,7 +11,11 @@ This project is a **Spring Boot** application that provides a REST API for gener
 - Can be tested using **Postman**.
 - Supports **Test-Driven Development (TDD)** with proper test cases.
 
-## API Details
+## API Endpoints
+http://localhost:8080/freight
+http://localhost:8080/generate
+http://localhost:8080/download/1
+
 
 ### Request Body Example
 ```json
